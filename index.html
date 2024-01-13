@@ -29,11 +29,13 @@
       <nav class="navigation">
         <div class="nav-content">
           <div class="leftnav">
-            <a style="font-size: 1.7rem" href="index.html">SteamCraft</a>
+            <a style="font-size: 1.7rem" href="index.html"
+              ><strong>SteamCraft</strong></a
+            >
             <div class="nav-links">
               <a href="menu.html">MENU</a>
               <a href="aricles.html">ARTICLES</a>
-              <a href="gift.hmtl">GIFT CARDS</a>
+              <a href="gift.html">GIFT CARDS</a>
             </div>
           </div>
           <button class="nav-btn"></button>
@@ -41,7 +43,7 @@
           <div class="dropdown-menu">
             <a href="menu.html">MENU</a>
             <a href="articles.html">ARTICLES</a>
-            <a href="gift.hmtl">GIFT CARDS</a>
+            <a href="gift.html">GIFT CARDS</a>
             <button class="dropdown-btn"></button>
           </div>
         </div>
@@ -71,8 +73,40 @@
             of steam. Our café is a haven for coffee enthusiasts and creative
             minds alike.
           </p>
-          <button>Find out more</button>
-          <!-- Inspired by the industrial revolution's spirit, SteamCraft is not just a place to sip on exceptional coffee but also a hub for collaboration and inspiration. -->
+          <button class="sec1-btn">Find out more</button>
+          <div class="sec1-popup">
+            <div class="popL">
+              <img
+                width="100%"
+                height="100%"
+                style="
+                  object-fit: cover;
+                  background-image: url(images/cofee-inspire-cmp.jpg);
+                  backdrop-filter: blur(15px);
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                "
+                src="images/cofee-inspire.jpg"
+                alt=""
+              />
+            </div>
+            <div class="popR">
+              <i class="fa-solid fa-x close-btn"></i>
+              <p>
+                Inspired by the industrial revolution's spirit, SteamCraft is
+                not just a place to sip on exceptional coffee but also a hub for
+                collaboration and inspiration. <br />
+                <span class="popRextra"
+                  >Enveloped in the aroma of ambition, SteamCraft transcends the
+                  ordinary. It's more than a coffee haven; it's a sanctuary for
+                  dreamers and creators.</span
+                >
+                <!-- 
+                  
+                   Immerse yourself in the energy of creativity, where each sip fuels not just the body but the imagination. -->
+              </p>
+            </div>
+          </div>
         </div>
       </section>
       <section class="section2 show-animate">
@@ -87,7 +121,7 @@
           meticulously crafted menu includes a variety of beverages, from rich
           and robust coffee blends to refreshing teas and delightful specialty
           drinks. -->
-          <button>Order Now</button>
+          <button class="sec2-btn">Order Now</button>
         </div>
         <div class="sec2-right">
           <img
@@ -114,7 +148,7 @@
             joy of each celebration.
           </p>
           <!-- Whether it's a cozy winter warm-up or a refreshing summer treat, we have something special for every occasion. Indulge in the festive spirit with our handcrafted beverages and make every moment memorable. -->
-          <button>Find Out More</button>
+          <button class="sec3-btn">Find Out More</button>
         </div>
         <div class="sec3-right">
           <img
@@ -141,10 +175,11 @@
             Signature Blend.
           </p>
           <!-- Meticulously curated from the finest beans, this unique blend combines the robust flavors of traditional brewing with the innovation of steam-infused technology. The result is a cup of coffee that transcends the ordinary, delivering a rich and aromatic experience that defines the essence of SteamCraft. Elevate your coffee journey with our distinctive Signature Blend, available only at SteamCraft. -->
-          <p>Brewmaster's Symphony</p>
-          <p>Elevated Elixirs</p>
-          <p>SteamCrafted Indulgence</p>
-          <button>Experience Our Journey</button>
+          <!-- <p>Brewmaster's Symphony</p>
+            <p>Elevated Elixirs</p>
+            <p>SteamCrafted Indulgence</p>
+          -->
+          <button class="sec4-btn">Experience Our Journey</button>
         </div>
         <div class="sec4-right">
           <img
@@ -197,6 +232,43 @@
         </div>
       </section>
     </main>
-    <script src="app.js"></script>
+    <script>
+      const toggleBtn = document.querySelector(".toggle-btn");
+      const dropdownMenu = document.querySelector(".dropdown-menu");
+
+      toggleBtn.addEventListener("click", function () {
+        dropdownMenu.classList.toggle("open");
+      });
+
+      const section1Btn = document.querySelector(".sec1-btn");
+      const section1popUp = document.querySelector(".sec1-popup");
+      const section1close = document.querySelector(".close-btn");
+
+      section1Btn.addEventListener("click", function () {
+        section1popUp.classList.add("switch-on");
+      });
+
+      section1close.addEventListener("click", function () {
+        section1popUp.classList.remove("switch-on");
+      });
+
+      document
+        .querySelector(".sec2-btn")
+        .addEventListener("click", function () {
+          window.location.href = "menu.html";
+        });
+
+      document
+        .querySelector(".sec3-btn")
+        .addEventListener("click", function () {
+          window.location.href = "gift.html";
+        });
+
+      document
+        .querySelector(".sec4-btn")
+        .addEventListener("click", function () {
+          window.location.href = "signature.html";
+        });
+    </script>
   </body>
 </html>
