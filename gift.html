@@ -34,23 +34,40 @@
             >
             <div class="nav-links">
               <a href="menu.html">MENU</a>
-              <a href="aricles.html">ARTICLES</a>
-              <a href="gift.hmtl">GIFT CARDS</a>
+              <a href="articles.html">ARTICLES</a>
+              <a href="gift.html">GIFT CARDS</a>
             </div>
           </div>
-          <button class="nav-btn"></button>
+          <button class="nav-btn">Say Hi</button>
           <i class="fa-solid fa-bars toggle-btn"></i>
           <div class="dropdown-menu">
             <a href="menu.html">MENU</a>
             <a href="articles.html">ARTICLES</a>
-            <a href="gift.hmtl">GIFT CARDS</a>
-            <button class="dropdown-btn"></button>
+            <a href="gift.html">GIFT CARDS</a>
           </div>
         </div>
       </nav>
     </header>
-
-    <main></main>
+    <div class="greeting-pop"></div>
+    <main>
+      <section class="section1">
+        <h2>Kindly insert the details:</h2>
+        <div class="d-cont">
+          <div class="gift left">
+            <h4>Name of Gifter:</h4>
+            <input class="gc-name" type="text" placeholder="eg: Bond" />
+            <h4>Name of Giftee☻:</h4>
+            <input class="gc-person" type="text" placeholder="eg: James" />
+            <h4>Ammount <em>(in figure)</em> to Gift:</h4>
+            <input class="gc-ammount" type="text" placeholder="eg: 700" />
+          </div>
+          <div class="gift right">
+            <button class="show-btn">Generate</button>
+            <div class="show-giftcard"></div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <script>
       const toggleBtn = document.querySelector(".toggle-btn");
@@ -58,6 +75,50 @@
 
       toggleBtn.addEventListener("click", function () {
         dropdownMenu.classList.toggle("open");
+      });
+
+      const showBtn = document.querySelector(".show-btn");
+      const showGc = document.querySelector(".show-giftcard");
+      const showGc2 = document.querySelector(".popUp");
+      const gcName = document.querySelector(".gc-name");
+      const gcPers = document.querySelector(".gc-person");
+      const gcammount = document.querySelector(".gc-ammount");
+
+      showBtn.addEventListener("click", function () {
+        showGc.innerHTML = `
+          <p> Hi ${gcName.value}, you have sent a Gift Card worth N${gcammount.value} to ${gcPers.value}. <br /> <br />
+            ${gcPers.value} will be alerted shortly, <br />
+            Thank you♥!</p>
+        `;
+      });
+
+      const greetingsArray = [
+        "Hello",
+        "Bonjour",
+        "Hola",
+        "Ciao",
+        "Konnichiwa",
+        "Guten Tag",
+        "Namaste",
+        "Salam",
+        "Annyeonghaseyo",
+        "Sawubona",
+      ];
+      const greetingEmojisArray = ["👋", "🌞", "🤝", "🙏", "😊"];
+      const greetingBtn = document.querySelector(".nav-btn");
+      const greetinPop = document.querySelector(".greeting-pop");
+
+      greetingBtn.addEventListener("click", function () {
+        let randomIndex1 = Math.floor(Math.random() * 10);
+        let randomIndex2 = Math.floor(Math.random() * 5);
+        greetinPop.innerHTML = `
+          <p class = "pad1"> ${greetingEmojisArray[randomIndex2]} </p>
+          <p class = "pad2"> ${greetingsArray[randomIndex1]} </p>
+        `;
+        greetinPop.style.display = "flex";
+        setTimeout(function () {
+          greetinPop.style.display = "none";
+        }, 1000);
       });
     </script>
   </body>

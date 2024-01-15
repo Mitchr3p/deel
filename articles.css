@@ -1,0 +1,563 @@
+/*
+420 | 720 | 1020 | 1620
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  word-spacing: 1.3px;
+  font-family: 'Montserrat', 'Playfair Display', sans-serif;
+  max-width: 1920px;
+  overflow-x: hidden;
+  background-image: url(images/african-mountain.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+img {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+button {
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+}
+
+p {
+  font-size: clamp(.89rem, 1.3vw, 1.5rem);
+}
+
+
+.navigation {
+  background: transparent;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  height: 10vh;
+  height: 10svh;
+  margin: 0 10%;
+}
+
+.nav-content a {
+  padding: 5px 10px;
+  border-radius: 10px;
+  transition: all .3s;
+}
+
+.nav-content a:hover {
+  background-color: hsla(225, 15%, 11%, 0.5);
+  color: white;
+  transform: scale(1.1);
+}
+
+.nav-content .leftnav {
+  display: flex;
+  gap: 60px;
+}
+
+.nav-content .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-content .toggle-btn {
+  display: none;
+  cursor: pointer;
+}
+
+.nav-content .dropdown-menu {
+  display: none;
+}
+
+.nav-content button {
+  background-color: transparent;
+  border: 2px solid #17191f;
+  border-radius: 20px;
+  font-family: 'Playfair Display';
+  font-weight: bold;
+  transition: all .3s;
+}
+
+.nav-content button:hover {
+  background-color: #17191f;
+  transform: scale(0.95);
+}
+
+.greeting-pop {
+  display: none;
+  justify-content: center;
+  position: fixed;
+  top: 40%;
+  left: 40%;
+  z-index: 20000;
+  border: 5px solid #17191f;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px 80px;
+}
+
+@media (max-width: 720px) {
+  .nav-content .nav-links {
+    display: none;
+  }
+
+  .nav-content .nav-btn {
+    display: none;
+  }
+
+  .nav-content .toggle-btn {
+    display: block;
+  }
+
+  .dropdown-menu a {
+    color: white;
+  }
+
+  .dropdown-menu.open {
+    position: absolute;
+    top: 78px;
+    width: 100%;
+    background: hsla(225, 15%, 11%, 0.5);
+    border-radius: 20px;
+    opacity: 0.9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+.section1 {
+  display: flex;
+  height: 100vh;
+  height: 100svh;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Josefin Sans';
+  font-weight: bold;
+  position: relative;
+}
+
+.section1 h1 {
+  color: #17191f;
+  /* transform: translateX(-30%); */
+  /* transform: translateY(30px); */
+  font-size: clamp(2rem, 4.2vw, 5rem);
+  position: relative;
+  left: -20%;
+  top: 7%;
+}
+
+.hero {
+  text-decoration: underline;
+  animation: colr 10s infinite;
+  /* color: transparent; */
+}
+
+@keyframes colr {
+  0%, 60% {
+    color: #17191f;
+  }
+
+  20%, 80% {
+    color: #FEBE5D;
+  }
+
+  40%, 100% {
+    color: #2D2C00;
+  }
+}
+
+.hero-right1 {
+  position: absolute;
+  top: 31%;
+  right: 17%;
+  width: 220px;
+  height: 220px;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  transition: all 1s;
+  z-index: 220;
+}
+
+.hero-right1:hover {
+  transform: scale(1.4);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  z-index: 1000;
+}
+
+.hero-right2 {
+  position: absolute;
+  top: 13%;
+  right: 8%;
+  width: 220px;
+  height: 220px;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  transition: all 1s;
+  z-index: 210;
+}
+
+.hero-right2:hover {
+  transform: scale(1.4);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  z-index: 1000;
+}
+
+.hero-right3 {
+  position: absolute;
+  top: 39%;
+  right: 2%;
+  width: 220px;
+  height: 220px;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  transition: all 1s;
+  z-index: 230;
+}
+
+.hero-right3:hover {
+  transform: scale(1.4);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  z-index: 1000;
+  right: 6%;
+}
+
+.hero-right4 {
+  position: absolute;
+  top: 57%;
+  right: 11%;
+  width: 220px;
+  height: 220px;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  transition: all 1s;
+  z-index: 240;
+}
+
+.hero-right4:hover {
+  transform: scale(1.4);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  z-index: 1000;
+}
+
+@media (max-width: 680px) {
+  .section1 h1 {
+    font-size: clamp(2.2rem, 4.2vw, 5rem);
+    left: -5%;
+    top: 7%;
+    color: white;
+    backdrop-filter: blur(5px);
+    padding: 10px;
+    border-radius: 20px;
+  }
+
+  .hR {
+    display: none;
+  }
+
+  .section1 {
+    background-image: url(images/sip-lagos.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  /* .hero-right1 {
+    top: 75%;
+    right: 80%;
+    width: 100px;
+    height: 100px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  .hero-right2 {
+    top: 75%;
+    right: 60%;
+    width: 100px;
+    height: 100px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  .hero-right3 {
+    top: 75%;
+    right: 30%;
+    width: 100px;
+    height: 100px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  
+  .hero-right3:hover {
+    transform: scale(1.7);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    z-index: 1000;
+    right: 30%;
+  }
+  .hero-right4 {
+    top: 75%;
+    right: 10%;
+    width: 100px;
+    height: 100px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  } */
+}
+
+.section2 {
+  display: flex;
+  height: 60vh;
+  width: 100%
+}
+
+.sec2-left {
+  display: flex;
+  justify-content: center;
+  padding: 0 10px;
+  padding-top: 40px;
+  width: 60%;
+  background-color: #17191f;
+}
+
+.sec2-left p {
+  max-width: 500px;
+  color: white;
+}
+
+.sec2-right {
+  width: 40%;
+}
+
+.section3 {
+  display: flex;
+  height: 60vh;
+  width: 100%;
+  border-top: 2px solid white;
+}
+
+.sec3-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10px;
+  padding-top: 40px;
+  background-color: #17191f;
+  width: 60%;
+}
+
+.sec3-left p {
+  max-width: 500px;
+  color: white;
+}
+
+.sec3-left h3 {
+  color: white;
+}
+
+.sec3-right {
+  width: 40%;
+}
+
+.section4 {
+  display: flex;
+  height: 60vh;
+  width: 100%;
+  border-top: 2px solid white;
+}
+
+.sec4-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10px;
+  padding-top: 40px;
+  background-color: #17191f;
+  width: 60%;
+}
+
+.sec4-left p {
+  max-width: 500px;
+  color: white;
+}
+
+.sec4-left h3{
+  color: white;
+}
+
+.sec4-right {
+  width: 40%;
+}
+
+.section5 {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  border-top: 2px solid white;
+}
+
+.sec5-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10px;
+  padding-top: 40px;
+  background-color: #17191f;
+  width: 60%;
+}
+
+.sec5-left p {
+  max-width: 500px;
+  color: white;
+}
+
+.sec5-left h3{
+  color: white;
+}
+
+.sec5-right {
+  width: 40%;
+}
+
+.section6 {
+  background-color: hsla(225, 15%, 11%, 0.7);
+  backdrop-filter: blur(5px);
+  color: white;
+}
+
+.s6-content {
+  margin: 0 10%;
+  border-top: 2px solid white;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-bottom: 30px;
+}
+
+.s6-content h3 {
+  padding-left: 16px;
+  transform: scale(1.3);
+}
+
+.s6-content i {
+  font-size: 2rem;
+}
+
+.s6-content .fa-instagram:hover {
+  transform: scale(1.2);
+  color: #cd486b  ;
+}
+
+.s6-content .fa-x-twitter:hover {
+  transform: scale(1.2);
+}
+
+.s6-content a {
+  font-size: 1.3rem;
+  position: relative;
+  color: white;
+}
+
+.s6-content a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #24292D;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.s6-content a:hover::after{
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.s6-content .sub1 {
+  padding-top: 70px;
+  transform: scale(1.7);
+  color: white;
+}
+
+
+@media (max-width: 580px) {
+  .imag-c {
+    width: 100%;
+    z-index: 100;
+    backdrop-filter: blur(1.5px);
+    background-color: transparent;
+  }
+  
+  .imag-c p {
+    max-width: 350px;
+    height: fit-content;
+    background-color:hsla(225, 15%, 11%, 0.71);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 10px;
+    font-weight: 500;
+  }
+
+  .imag {
+    display: none;
+  }
+
+  .Ms1 {
+    background-image: url(images/lagos.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .Ms2 {
+    background-image: url(images/sip-lagos.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .Ms3 {
+    background-image: url(images/lagos-struggle.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .Ms3 h3{
+    background-color:hsla(225, 15%, 11%, 0.5);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 10px;
+  }
+  .Ms4 {
+    background-image: url(images/newyork.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .Ms4 h3{
+    background-color:hsla(225, 15%, 11%, 0.5);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 10px;
+  }
+}

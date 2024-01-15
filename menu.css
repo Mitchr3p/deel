@@ -12,8 +12,9 @@ body {
   line-height: 1.6;
   word-spacing: 1.3px;
   font-family: 'Montserrat', 'Playfair Display', sans-serif;
+  max-width: 1920px;
   overflow-x: hidden;
-  background-image: url(images/coffee-background.jpg);
+  background-image: url(images/tea-background.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -44,17 +45,22 @@ h3 {
   font-size: clamp(1.25rem, 2.5vw, 2rem);
 }
 
+h4 {
+  font-size: clamp(.95rem, 1.7vw, 2rem);
+}
+
 p {
-  font-size: clamp(.89rem, 1.3vw, 1.5rem);
+  font-size: clamp(.7rem, 1.3vw, 1.5rem);
 }
 
 
 .navigation {
-  background: transparent;
+  background: hsla(28, 32%, 68%, 0.2);
   position: fixed;
   width: 100%;
   z-index: 1;
   top: 0;
+  backdrop-filter: blur(2px);
 }
 
 .nav-content {
@@ -65,6 +71,18 @@ p {
   height: 10vh;
   height: 10svh;
   margin: 0 10%;
+}
+
+.nav-content a {
+  transition: all .3s;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.nav-content a:hover {
+  background-color: hsla(15, 80%, 6%, 0.525);
+  color: white;
+  transform: scale(1.1);
 }
 
 .nav-content .leftnav {
@@ -85,6 +103,34 @@ p {
 
 .nav-content .dropdown-menu {
   display: none;
+}
+
+.nav-content button {
+  background-color: transparent;
+  border: 2px solid #1b0903;
+  border-radius: 20px;
+  font-family: 'Playfair Display';
+  font-weight: bold;
+  transition: all .3s;
+}
+
+.nav-content button:hover {
+  background-color: #1b0903;
+  transform: scale(0.95);
+  color: white;
+}
+
+.greeting-pop {
+  display: none;
+  justify-content: center;
+  position: fixed;
+  top: 40%;
+  left: 40%;
+  z-index: 20000;
+  border: 5px solid #1b0903;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px 80px;
 }
 
 @media (max-width: 720px) {
@@ -110,4 +156,170 @@ p {
     justify-content: center;
     align-items: center;
   }
+}
+
+.section1 {
+  display: flex;
+  margin: 15vh 10% 10vh 10%;
+}
+
+.section1 h3 {
+  width: 50%;
+  font-family: 'Playfair Display';
+  color: #1b0903;
+}
+
+.sec1-right {
+  display: flex;
+  width: 50%;
+  background-color: hsla(28, 32%, 68%, 0.2);
+  backdrop-filter: blur(1px);
+  overflow: hidden;
+  position: relative;
+}
+.sec1-right img{
+  width: 33%;
+  max-height: 320px;
+  transition: all 1s;
+}
+
+.sec1-right .im1:hover {
+  width: 100%;
+  z-index: 100;
+}
+.sec1-right .im2:hover {
+  width: 100%;
+  z-index: 110;
+  transform: translateX(-33%);
+}
+.sec1-right .im3:hover {
+  width: 100%;
+  z-index: 120;
+  transform: translateX(-66%);
+}
+
+@media (max-width: 720px) {
+  .section1 h3 {
+    width: 80%;
+  }
+
+  .sec1-right {
+    display: none;
+  }
+}
+
+.section2 .sec2-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 10% 10vh 10%;
+  border-radius: 20px;
+  background-color: hsla(31, 11%, 57%, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+.sec2-top {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  border-bottom: 2px solid black;
+}
+
+.sec2-top h4 {
+  padding: 10px 10px;
+  cursor: pointer;
+}
+
+.sec2-top .active {
+  background-color: hsla(15, 80%, 6%, 0.9);
+  border-radius: 20px;
+  color: white;
+}
+
+.sec2-top h4:hover {
+  background-color: hsla(15, 80%, 6%, 0.8);
+  border-radius: 20px;
+  color: white;
+}
+
+.sec2-bottomtext {
+  max-height: 380px;
+  background-color: hsla(31, 11%, 57%, 0.2);
+  backdrop-filter: blur(7px);
+  overflow-y: auto;
+}
+
+.sec2-bottomtext .b {
+  display: none;
+}
+
+.b p {
+  background-color: hsla(15, 80%, 6%, 0.525);
+  margin: 10px 0;
+  margin-left: 10px;
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+}
+
+.b.show {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.s3-content {
+  margin: 0 10%;
+  border-top: 2px solid black;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-bottom: 30px;
+}
+
+.s3-content h3 {
+  padding-left: 16px;
+  transform: scale(1.3);
+}
+
+.s3-content i {
+  font-size: 2rem;
+}
+
+.s3-content .fa-instagram:hover {
+  transform: scale(1.2);
+  color: #cd486b  ;
+}
+
+.s3-content .fa-x-twitter:hover {
+  transform: scale(1.2);
+}
+
+.s3-content a {
+  font-size: 1.3rem;
+  position: relative;
+}
+
+.s3-content a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #24292D;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.s3-content a:hover::after{
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.s3-content .sub1 {
+  padding-top: 70px;
+  transform: scale(1.7);
+  color: #24292D;
 }

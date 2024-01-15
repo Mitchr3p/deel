@@ -12,6 +12,7 @@ body {
   line-height: 1.6;
   word-spacing: 1.3px;
   font-family: 'Montserrat', 'Playfair Display', sans-serif;
+  max-width: 1920px;
   overflow-x: hidden;
   background-image: url(images/coffee-background.jpg);
   background-size: cover;
@@ -67,6 +68,18 @@ p {
   margin: 0 10%;
 }
 
+.nav-content a {
+  transition: all .3s;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.nav-content a:hover {
+  background-color: #24292D;
+  color: white;
+  transform: scale(1.1);
+}
+
 .nav-content .leftnav {
   display: flex;
   gap: 60px;
@@ -78,6 +91,8 @@ p {
   gap: 20px;
 }
 
+
+
 .nav-content .toggle-btn {
   display: none;
   cursor: pointer;
@@ -85,6 +100,33 @@ p {
 
 .nav-content .dropdown-menu {
   display: none;
+}
+
+.nav-content button {
+  background-color: transparent;
+  border: 2px solid hwb(32 28% 19%);
+  border-radius: 20px;
+  font-family: 'Playfair Display';
+  font-weight: bold;
+  transition: all .3s;
+}
+
+.nav-content button:hover {
+  background-color: hwb(32 28% 19%);
+  transform: scale(0.95);
+}
+
+.greeting-pop {
+  display: none;
+  justify-content: center;
+  position: fixed;
+  top: 40%;
+  left: 40%;
+  z-index: 20000;
+  border: 5px solid #24292D;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px 80px;
 }
 
 @media (max-width: 720px) {
@@ -100,21 +142,27 @@ p {
     display: block;
   }
 
+  .dropdown-menu a {
+    color: white;
+  }
+
   .dropdown-menu.open {
     position: absolute;
     top: 78px;
     width: 100%;
-    background: black;
+    background: #24292D;
+    border-radius: 20px;
+    opacity: 0.9;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 1000;
   }
 }
 
 .section1 {
   display: flex;
-  max-width: 1920px;
   height: 40vh;
   height: 40svh;
   margin: 15vh 0 10vh 0;
@@ -375,7 +423,7 @@ p {
 }
 
 
-.sec4-left button {
+/* .sec4-left button {
   background-color: transparent;
   border: 2px solid hsla(353, 92%, 24%);
   border-radius: 20px;
@@ -387,6 +435,62 @@ p {
 .sec4-left button:hover {
   background-color:hsla(353, 92%, 24%);
   transform: scale(0.95);
+} */
+
+.sec4-left .contents {
+  position: relative;
+  width: fit-content;
+  transition: background-color .3s;
+}
+
+.sec4-left .contents::before {
+  content: "Essence of SteamCraft";
+  color: black;
+  animation: words 30s infinite;
+}
+
+.sec4-left .contents::after {
+  content: "";
+  position: absolute;
+  width: calc(100% + 8px);
+  height: 100%;
+  background-color: #B26E69;
+  border-left: 2px solid hsla(353, 92%, 24%, 0.5);
+  right: -8px;
+  animation: cursor .8s infinite, typing 30s steps(24) infinite;
+}
+
+@keyframes cursor {
+  to{
+     border-left: 2px solid hsla(353, 92%, 24%);
+  }
+}
+
+@keyframes words {
+  0%,20%{
+      content: "Brewmaster's Symphony";
+  }
+  21%,40%{
+      content: "Elevated Elixirs";
+  }
+  41%,60%{
+      content: "SteamCrafted Indulgence";
+  }
+  61%,80%{
+      content: "Transcends the ordinary";
+  }
+  81%,100%{
+      content: "Immerse yourself in Inspiration";
+  }
+}
+
+@keyframes typing {
+  10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
+      width: 0;
+  }
+  5%,20%,25%,40%,45%,60%,65%,80%,85%{
+      width: calc(100% + 8px);
+  }
 }
 
 .sec4-right {
@@ -473,7 +577,4 @@ p {
   transform: scale(1.7);
   color: #24292D;
 }
-
-
-
 
