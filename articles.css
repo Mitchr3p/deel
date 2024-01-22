@@ -14,7 +14,7 @@ body {
   font-family: 'Montserrat', 'Playfair Display', sans-serif;
   max-width: 1920px;
   overflow-x: hidden;
-  background-image: url(images/african-mountain.jpg);
+  background-image: url(images/african-mountain-1.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -172,12 +172,14 @@ p {
 
 .section1 h1 {
   color: #17191f;
-  /* transform: translateX(-30%); */
-  /* transform: translateY(30px); */
   font-size: clamp(2rem, 4.2vw, 5rem);
   position: relative;
   left: -20%;
   top: 7%;
+}
+
+.section1 hR img {
+  object-fit: cover;
 }
 
 .hero {
@@ -272,7 +274,7 @@ p {
 @media (max-width: 680px) {
   .section1 h1 {
     font-size: clamp(2.2rem, 4.2vw, 5rem);
-    left: -5%;
+    left: -2%;
     top: 7%;
     color: white;
     backdrop-filter: blur(5px);
@@ -285,7 +287,7 @@ p {
   }
 
   .section1 {
-    background-image: url(images/sip-lagos.jpg);
+    background-image: url(images/sip-lagos-1.jpg);
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -325,6 +327,10 @@ p {
     height: 100px;
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
   } */
+}
+
+.Ms img {
+  object-fit: cover;
 }
 
 .section2 {
@@ -454,6 +460,7 @@ p {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  padding-top: 30px;
   padding-bottom: 30px;
 }
 

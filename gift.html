@@ -88,8 +88,12 @@
         showGc.innerHTML = `
           <p> Hi ${gcName.value}, you have sent a Gift Card worth N${gcammount.value} to ${gcPers.value}. <br /> <br />
             ${gcPers.value} will be alerted shortly, <br />
-            Thank you♥!</p>
+            Thank you ♥!</p>
         `;
+
+        setTimeout(() => {
+          showGc.innerHTML = "";
+        }, 5000);
       });
 
       const greetingsArray = [

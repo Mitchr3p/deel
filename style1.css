@@ -277,6 +277,7 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
 }
 
@@ -336,6 +337,7 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
 
   .section2 .sec2-right {
@@ -390,6 +392,7 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
 
   .section3 .sec3-right {
@@ -502,6 +505,7 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
 
   .section4 .sec4-right {

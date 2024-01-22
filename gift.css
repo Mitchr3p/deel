@@ -169,12 +169,6 @@ p {
   margin-top: 15vh;
 }
 
-/* .left {
-  position: relative;
-  left: 10%;
-}
- */
-
 .gift {
   display: flex;
   flex-direction: column;
@@ -191,6 +185,7 @@ p {
 
 .d-cont .right {
   height: 100%;
+  margin-bottom: 50px;
 }
 
 h2 {
