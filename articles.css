@@ -291,42 +291,6 @@ p {
     background-size: cover;
     background-repeat: no-repeat;
   }
-
-  /* .hero-right1 {
-    top: 75%;
-    right: 80%;
-    width: 100px;
-    height: 100px;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-  }
-  .hero-right2 {
-    top: 75%;
-    right: 60%;
-    width: 100px;
-    height: 100px;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-  }
-  .hero-right3 {
-    top: 75%;
-    right: 30%;
-    width: 100px;
-    height: 100px;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-  }
-  
-  .hero-right3:hover {
-    transform: scale(1.7);
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-    z-index: 1000;
-    right: 30%;
-  }
-  .hero-right4 {
-    top: 75%;
-    right: 10%;
-    width: 100px;
-    height: 100px;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-  } */
 }
 
 .Ms img {
