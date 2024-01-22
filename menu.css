@@ -14,7 +14,9 @@ body {
   font-family: 'Montserrat', 'Playfair Display', sans-serif;
   max-width: 1920px;
   overflow-x: hidden;
-  background-image: url(images/tea-background-1.jpg);
+  background-image: linear-gradient(
+    152deg in oklab, 
+    hsla(28, 32%, 68%) 37% 6%, #fff 68% 47%, #ffff 68% 100%);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -234,7 +236,7 @@ p {
 .sec2-top h4 {
   padding: 10px 10px;
   cursor: pointer;
-  word-break: break-all;
+  word-wrap: break-word;
   font-size: clamp(.75rem, 1.7vw, 2rem);
 }
 
